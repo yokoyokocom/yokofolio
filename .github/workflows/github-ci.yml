@@ -44,4 +44,4 @@ jobs:
         --exclude="*/json" \
         --exclude="README.md" \
         "$GITHUB_WORKSPACE"/ \
-        yokofolio@sv77.cloudfree.ne.jp:/home/yokofolio/yokofolio.cloudfree.jp/public_html/wp-content/themes/yokofolio
+        yokofolio@162.43.106.92:/home/yokofolio/yokofolio.cloudfree.jp/public_html/wp-content/themes/yokofolio
