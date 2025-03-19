@@ -24,7 +24,7 @@ jobs:
 
     - name: compile SCSS
       run: |
-        sass ./themes/yokofolio/assets/scss/style.scss ./themes/yokofolio/assets/css/style.css --style=compressed --no-source-map
+        npm run build
 
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
