@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "sass ./themes/yokofolio/assets/scss/style.scss ./themes/yokofolio/assets/css/style.css --style=compressed --watch --no-source-map",
+    "dev": "sass ./themes/yokofolio/assets/scss/style.scss ./themes/yokofolio/assets/css/style.css --style=compressed --watch --no-source-map"
   },
   "keywords": [],
   "author": "",
