@@ -1,0 +1,128 @@
+.works-archive{
+  &__wrap{
+    @include temp-wrap;
+  }
+  &__list{
+    margin-top: vw(1920px,80px);
+
+    display: grid;
+    gap: vw(1920px,24px);
+    grid-template-columns: repeat(3,1fr);
+  }
+  &__item{
+    padding: vw(1920px,16px) vw(1920px,16px) vw(1920px,24px);
+    background: #FFF;
+  }
+  &__thumb{
+    width: 100%;
+    aspect-ratio: 16/9;
+    img{
+      @include temp-img;
+      height: 100%;
+    }
+  }
+  &__title{
+    margin-top: vw(1920px,10px);
+    color: $darkblue;
+    font-weight: 700;
+    text-align: center
+  }
+  &__content{
+    margin-top: vw(1920px,12px);
+    align-items: center;
+    display: flex;
+    font-size: vw(1920px,12px);
+    justify-content: space-between;
+  }
+  &__name{
+    width: vw(1920px,74px);
+    padding: vw(1920px,4px) vw(1920px,8px);
+    background: $darkblue;
+    color: #FFF;
+    text-align: center;
+  }
+  &__text{
+    width: calc(100% - vw(1920px,82px));
+  }
+  &__btn{
+    @include temp-btn;
+    width: vw(1920px,180px);
+    margin: vw(1920px, 32px) auto 0;
+    padding: vw(1920px,14px);
+    font-size: vw(1920px,14px);
+  }
+}
+
+.works-post{
+  &__wrap{
+    @include temp-wrap;
+    max-width: vw(1920px,800px);
+  }
+  &__thumb{
+    margin-top: vw(1920px,40px);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    pointer-events: none;
+    img{
+      @include temp-img;
+      height: 100%;
+    }
+  }
+  &__info{
+    width: 100%;
+    max-width: vw(1920px,640px);
+    margin: vw(1920px,64px) auto 0;
+    li{
+      padding: vw(1920px,32px) vw(1920px,16px);
+      position: relative;
+      align-items: flex-start;
+      border-top: vw(1920px,1px) solid $darkblue;
+      column-gap: vw(1920px,48px);
+      display: flex;
+      &:last-of-type{
+        border-bottom: vw(1920px,1px) solid $darkblue;
+      }
+    }
+  }
+  &__title{
+    width: vw(1920px,110px);
+    padding: vw(1920px,4px) vw(1920px,8px);
+    position: relative;
+    background: $darkblue;
+    color: #FFF;
+    font-size: vw(1920px,14px);
+    font-weight: 700;
+    text-align: center;
+    &::before{
+      width: vw(1920px,1px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $darkblue;
+      content: "";
+    }
+  }
+  &__content{
+    width: calc(100% - vw(1920px,158px));
+    padding: vw(1920px,2px) 0;
+    a{
+      color: #00F;
+      text-decoration: underline;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &__other{
+    margin-top: vw(1920px,100px);
+    column-gap: vw(1920px,24px);
+    display: flex;
+    justify-content: center;
+    a{
+      color: $darkblue;
+      display: block;
+      text-decoration: underline;
+    }
+  }
+}

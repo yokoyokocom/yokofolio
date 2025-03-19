@@ -1,0 +1,109 @@
+.post-layout{
+  &__wrap{
+    @include temp-wrap;
+    padding: vw(1920px,40px) 0 vw(1920px,100px);
+  }
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.archive-post{
+  &__list{
+    width: 100%;
+    max-width: vw(1920px,750px);
+    display: grid;
+    gap: vw(1920px,16px) vw(1920px,32px);
+    grid-template-columns: repeat(2,1fr);
+    a{
+      display: block;
+      &:hover{
+        .archive-post{
+          &__thumb{
+            &::before{
+              border-width: vw(1920px,5px);
+              opacity: 1;
+              scale: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__thumb{
+    position: relative;
+    aspect-ratio: 16/9;
+    &::before{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-color: $yellow;
+      border-style: solid;
+      border-width: 0;
+      content: "";
+      opacity: 0;
+      translate: -50% -50%;
+      transition: border-width .4s, opacity .4s, scale .4s;
+      scale: 0.85;
+    }
+    img{
+      @include temp-img;
+      height: 100%;
+    }
+  }
+  &__time{
+    margin-top: vw(1920px,8px);
+    display: block;
+    font-size: vw(1920px,14px);
+  }
+  &__title{
+    margin-top: vw(1920px,2px);
+    font-size: vw(1920px,18px);
+    font-weight: 700;
+  }
+}
+
+.single-post{
+  margin-top: vw(1920px,80px);
+  &__wrap{
+    @include temp-wrap;
+    padding: vw(1920px,40px) 0 vw(1920px,100px);
+  }
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__main{
+    width: 100%;
+    max-width: vw(1920px,750px);
+    padding: vw(1920px,48px) vw(1920px,32px);
+    background: #FFF5;
+  }
+  &__meta{
+    align-items: center;
+    column-gap: vw(1920px,24px);
+    display: flex;
+  }
+  &__date{
+    opacity: .8;
+  }
+  &__cat{
+    padding: vw(1920px,8px) vw(1920px,12px);
+    background: $darkblue;
+    color: #FFF;
+    font-size: vw(1920px,14px);
+  }
+  &__title{
+    margin: vw(1920px,24px) 0 vw(1920px,48px);
+    font-size: vw(1920px,32px);
+    font-weight: 700;
+  }
+  &__content{
+    p{
+      margin-top: vw(1920px,20px);
+    }
+  }
+}
