@@ -1,0 +1,34 @@
+.footer{
+  &__bg{
+    background: $darkblue;
+  }
+  &__wrap{
+    @include temp-wrap;
+    margin-top: vw(1920px,240px);
+    padding: vw(1920px,24px);
+    align-items: center;
+  }
+  &__sns{
+    column-gap: vw(1920px,16px);
+    display: flex;
+    justify-content: center;
+    a{
+      color: #FFF;
+      font-size: vw(1920px,24px);
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &__copyright{
+    margin-top: vw(1920px,16px);
+    color: $white;
+    font-size: vw(1920px,14px);
+    text-align: center;
+    a{
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+}
