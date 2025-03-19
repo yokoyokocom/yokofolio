@@ -34,6 +34,9 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    
+    - name: Check rsync
+      run: rsync --version
 
     - name: Deploy to Server
       run: |
@@ -45,7 +48,7 @@ jobs:
         --exclude=".gitignore" \
         --exclude="docker-compose.yaml" \
         --exclude="Dockerfile" \
-        --exclude="*/json" \
+        --exclude="*.json" \
         --exclude="README.md" \
         "$GITHUB_WORKSPACE"/ \
         yokofolio@162.43.106.92:/home/yokofolio/yokofolio.cloudfree.jp/public_html/wp-content/themes/yokofolio
