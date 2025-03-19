@@ -1,0 +1,14 @@
+.DS_Store
+
+ai1wm-backups
+languages
+upgrade
+uploads
+plugins
+
+themes/twentytwenty*
+themes/index.php
+
+node_modules
+
+.env
