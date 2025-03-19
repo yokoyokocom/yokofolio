@@ -33,5 +33,15 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no yokofolio@162.43.106.92 'cd /yokofolio.cloudfree.jp/public_html/wp-content/themes/yokofolio && git pull origin main'
-      
+        rsync -avz \
+        -e "ssh -o StrictHostKeyChecking=no -p 10022" \
+        --exclude=".git/" \
+        --exclude=".github/" \
+        --exclude="*.example" \
+        --exclude=".gitignore" \
+        --exclude="docker-compose.yaml" \
+        --exclude="Dockerfile" \
+        --exclude="*/json" \
+        --exclude="README.md" \
+        "$GITHUB_WORKSPACE"/ \
+        yokofolio@162.43.106.92:/home/yokofolio/yokofolio.cloudfree.jp/public_html/wp-content/themes/yokofolio
