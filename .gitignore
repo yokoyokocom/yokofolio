@@ -8,6 +8,7 @@ plugins
 
 themes/twentytwenty*
 themes/index.php
+themes/yokofolio/assets/css/style.css
 
 node_modules
 
