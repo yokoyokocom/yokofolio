@@ -36,4 +36,4 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Deploy to Server
-      run: rsync -auzrv --delete ./themes/ yokofolio@sv77.cloudfree.ne.jp:/home/yokofolio/yokofolio.cloudfree.jp/public_html/wp-content/themes --exclude=".git/" --exclude=".github/" --exclude="node_modules/" --exclude="*.example" --exclude=".gitignore" --exclude="docker-compose.yaml" --exclude="Dockerfile" --exclude="*.json" --exclude="README.md" -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022"
+      run: rsync -auzrv --delete ./themes/ $SSH_USER@$SSH_HOST:$SSH_PATH --exclude=".git/" --exclude=".github/" --exclude="node_modules/" --exclude="*.example" --exclude=".gitignore" --exclude="docker-compose.yaml" --exclude="Dockerfile" --exclude="*.json" --exclude="README.md" -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $SSH_PORT"
