@@ -416,43 +416,17 @@
     flex-wrap: wrap;
     justify-content: center;
     row-gap: vw(1920px,32px);
-  }
-  &__item{
-    width: 31%;
-    position: relative;
-    transition: transform .4s;
-    &::before{
-      width: 95%;
-      height: vw(1920px,32px);
-      position: absolute;
-      bottom: vw(1920px,-12px);
-      left: 50%;
-      background: $darkblue;
-      border-radius: 50%;
-      content: "";
-      filter: blur(vw(1920px,28px));
-      opacity: 0;
-      transform: translateX(-50%);
-      transition: opacity .4s, transform .4s;
-      z-index: -1;
-    }
-    &:hover{
-      &::before{
-        opacity: 1;
-        transform: translateX(-50%) scale(0.7);
-      }
-      a{
-        transform: translateY(vw(1920px,-16px));
-      }
-    }
     a{
-      background: #FFF;
-      aspect-ratio: 16/9;
-      border: vw(1920px,4px) solid $darkblue;
+      width: auto;
+      height: vw(1920px,100px);
       display: block;
       transition: transform .4s;
+      &:hover{
+        opacity: .7;
+      }
       img{
         @include temp-img;
+        height: 100%;
       }
     }
   }

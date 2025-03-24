@@ -155,6 +155,7 @@
           <ul class="skill__list">
             <li class="skill__item fadeInScroll">Docker</li>
             <li class="skill__item fadeInScroll">MAMP</li>
+            <li class="skill__item fadeInScroll">GitHub</li>
             <li class="skill__item fadeInScroll">GitLab</li>
             <li class="skill__item fadeInScroll">WordPress</li>
             <li class="skill__item fadeInScroll">Shopify</li>
@@ -230,9 +231,8 @@
     <div class="link__wrap">
       <h2 class="link__head fadeInUpScroll"><span>関連リンク</span>LINK</h2>
       <div class="link__list fadeInUpScroll">
-        <div class="link__item">
-          <a href="https://qiita.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_qiita.webp" alt="Qiita"></a>
-        </div>
+        <a href="https://github.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_github.webp" alt="GitHub" loading="lazy"></a>
+        <a href="https://qiita.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_qiita.webp" alt="Qiita" loading="lazy"></a>
       </div>
     </div>
   </section>
