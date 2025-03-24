@@ -37,8 +37,8 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        rsync -v -avz \
-        -e "ssh -vvv -o StrictHostKeyChecking=no -p 10022" \
+        rsync -avz --progress \
+        -e "ssh -p 10022 -o StrictHostKeyChecking=no" \
         --exclude=".git/" \
         --exclude=".github/" \
         --exclude="*.example" \
