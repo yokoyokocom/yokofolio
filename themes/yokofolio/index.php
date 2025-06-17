@@ -71,7 +71,7 @@
   <section class="p-homeAbout">
     <div class="p-homeAbout__bg fadeInUpScroll">
       <div class="p-homeAbout__inner l-inner">
-        <h2 class="c-homeHead fadeInUpScroll"><span>自己紹介</span>ABOUT</h2>
+        <h2 class="p-homeAbout__head c-homeHead fadeInUpScroll"><span>自己紹介</span>ABOUT</h2>
         <p class="p-homeAbout__text fadeInUpScroll">
           はじめまして、このサイトにお越しいただきありがとうございます。<br>
           北海道にて現役フロントエンドエンジニアの「よこ」と申します。</p>
@@ -191,7 +191,7 @@
     <section class="p-homeWork">
       <div class="p-homeWork__bg">
         <div class="p-homeWork__inner l-inner">
-          <h2 class="c-homeHead fadeInUpScroll"><span>制作実績</span>WORKS</h2>
+          <h2 class="p-homeWork__head c-homeHead fadeInUpScroll"><span>制作実績</span>WORKS</h2>
           <div class="p-homeWork__list splide fadeInScroll">
             <div class="splide__track">
               <div class="splide__list">
