@@ -80,6 +80,7 @@
   }
   &__title{
     width: 110rem;
+    margin-top: 5rem;
     padding: 4rem 8rem;
     position: relative;
     background: $darkblue;
@@ -100,6 +101,7 @@
   &__content{
     width: calc(100% - 158rem);
     padding: 2rem 0;
+    line-height: 1.75;
     a{
       color: #00F;
       text-decoration: underline;

@@ -30,8 +30,6 @@ if(mvAnime){
   },"<");
 }
 
-const rellax = new Rellax('.js-rellax');
-
 const workList = document.querySelector('.p-homeWork__list');
 if(workList){
   const worksSlide = new Splide(workList,{
@@ -46,3 +44,21 @@ if(workList){
   });
   worksSlide.mount();
 }
+
+function scrollAnimation(className, offset){
+  const scrollElements = document.querySelectorAll('.' + className);
+  scrollElements.forEach(function(scrollElement){
+    const elemPos = scrollElement.getBoundingClientRect().top + window.scrollY;
+    const scroll = window.scrollY;
+    const windowHeight = window.innerHeight;
+    if(scroll >= elemPos - windowHeight + offset){
+      scrollElement.classList.add('is_active');
+    }
+  });
+}
+window.addEventListener('scroll', function(){
+  scrollAnimation('a-set', 100);
+});
+window.addEventListener('DOMContentLoaded',function(){
+  scrollAnimation('a-set', 100);
+});

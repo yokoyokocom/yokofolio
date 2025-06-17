@@ -19,6 +19,12 @@
       &:hover{
         opacity: .7;
       }
+      svg{
+        height: 24rem;
+        path{
+          fill: #FFF;
+        }
+      }
     }
   }
   &__copyright{

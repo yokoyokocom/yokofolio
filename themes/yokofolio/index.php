@@ -39,7 +39,7 @@
 
   <section class="p-homeNews">
     <div class="p-homeNews__inner l-inner">
-      <h2 class="c-homeHead fadeInUpScroll"><span>お知らせ</span>NEWS</h2>
+      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">お知らせ</span><span class="blue">N</span>EWS</h2>
       <?php
       $newsArgs = array(
         'posts_per_page' => 3,
@@ -71,7 +71,7 @@
   <section class="p-homeAbout">
     <div class="p-homeAbout__bg fadeInUpScroll">
       <div class="p-homeAbout__inner l-inner">
-        <h2 class="p-homeAbout__head c-homeHead fadeInUpScroll"><span>自己紹介</span>ABOUT</h2>
+        <h2 class="p-homeAbout__head c-homeHead fadeInUpScroll"><span class="jp">自己紹介</span><span class="green">A</span>BOUT</h2>
         <p class="p-homeAbout__text fadeInUpScroll">
           はじめまして、このサイトにお越しいただきありがとうございます。<br>
           北海道にて現役フロントエンドエンジニアの「よこ」と申します。</p>
@@ -80,18 +80,15 @@
           まだまだひよっこエンジニアですが、<br class="sp-only">日々学習し技術力を上げています！
         </p>
         <p class="p-homeAbout__text fadeInUpScroll">
-          Webサイトを作るだけではなく、運用後のSEOにも強い会社に所属しております。<br>
+          Webサイトを作るだけではなく、制作後のSEOに強い会社に所属しております。<br>
           見た目は勿論、内部の記述にもこだわってコーディングをしています。
         </p>
         <p class="p-homeAbout__text fadeInUpScroll">
           ただ、デザイン力は一切無いので、ご勘弁ください。
         </p>
         <p class="p-homeAbout__text fadeInUpScroll">
-          今はWordPressのテーマを<br class="sp-only">触る機会が多いですが、<br class="sp-only">Vue/Laravel等のフレームワークも<br class="sp-only">扱えるようになりたい！
-        </p>
-        <p class="p-homeAbout__text fadeInUpScroll">
-          このサイトは<br class="sp-only">自分のポートフォリオ兼WordPressの<br class="sp-only">機能を色々確かめるサイトにします笑<br>
-          URLを見るとわかると思いますが、<br class="sp-only">Xserverの無料サーバーなので<br class="sp-only">容量一杯にならないように適度に遊びます！
+          このサイトは<br class="sp-only">自分のポートフォリオ兼色々遊ぶ用のサイトです。<br>
+          無料サーバーなので<br class="sp-only">容量一杯にならないように適度に遊びます！
         </p>
       </div>
     </div>
@@ -99,12 +96,12 @@
 
   <section class="p-homeSkill">
     <div class="p-homeSkill__inner l-inner">
-      <h2 class="c-homeHead fadeInUpScroll"><span>取得技術</span>SKILL</h2>
+      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">技術力</span><span class="red">S</span>KILL</h2>
       <p class="p-homeSkill__explain fadeInUpScroll">各項目ごとに使用可能な技術を一覧にしています。<br>記載しているもの全てが完璧に使いこなせる訳ではありません。</p>
       <section class="p-homeSkill__area">
         <div class="p-homeSkill__box">
           <h3 class="p-homeSkill__kinds">CODING</h3>
-          <p class="p-homeSkill__explain">使用可能な言語、ライブラリ、フレームワーク</p>
+          <p class="p-homeSkill__explain">使ったことある言語、ライブラリ、フレームワーク</p>
           <ul class="p-homeSkill__list">
             <li class="p-homeSkill__item fadeInScroll">HTML5</li>
             <li class="p-homeSkill__item fadeInScroll">CSS3</li>
@@ -112,6 +109,7 @@
             <li class="p-homeSkill__item fadeInScroll">PHP</li>
             <li class="p-homeSkill__item fadeInScroll">Laravel</li>
             <li class="p-homeSkill__item fadeInScroll">JavaScript Vanilla</li>
+            <li class="p-homeSkill__item">Three.js</li>
             <li class="p-homeSkill__item fadeInScroll">Vue</li>
             <li class="p-homeSkill__item fadeInScroll">jQuery</li>
             <li class="p-homeSkill__item fadeInScroll">Liquid</li>
@@ -125,7 +123,7 @@
           <p class="p-homeSkill__text">インフラ関連で対応出来る作業</p>
           <ul class="p-homeSkill__list">
             <li class="p-homeSkill__item fadeInScroll">ドメイン取得</li>
-            <li class="p-homeSkill__item fadeInScroll">サーバー管理</li>
+            <li class="p-homeSkill__item fadeInScroll">サーバー設定</li>
             <li class="p-homeSkill__item fadeInScroll">サーバー移管</li>
             <li class="p-homeSkill__item fadeInScroll">レジストラ移管</li>
             <li class="p-homeSkill__item fadeInScroll">DNSレコード変更</li>
@@ -137,7 +135,7 @@
       <section class="p-homeSkill__area">
         <div class="p-homeSkill__box">
           <h3 class="p-homeSkill__kinds">MEASUREMENT</h3>
-          <p class="p-homeSkill__text">サイトアクセス等の使用可能ツール</p>
+          <p class="p-homeSkill__text">アクセス解析等の使用可能ツール</p>
           <ul class="p-homeSkill__list">
             <li class="p-homeSkill__item fadeInScroll">Google Analytics</li>
             <li class="p-homeSkill__item fadeInScroll">Google Tag Manager</li>
@@ -191,7 +189,7 @@
     <section class="p-homeWork">
       <div class="p-homeWork__bg">
         <div class="p-homeWork__inner l-inner">
-          <h2 class="p-homeWork__head c-homeHead fadeInUpScroll"><span>制作実績</span>WORKS</h2>
+          <h2 class="p-homeWork__head c-homeHead fadeInUpScroll"><span class="jp">制作実績</span><span class="yellow">W</span>ORKS</h2>
           <div class="p-homeWork__list splide fadeInScroll">
             <div class="splide__track">
               <div class="splide__list">
@@ -229,7 +227,7 @@
 
   <section class="p-homeLink">
     <div class="p-homeLink__inner l-inner">
-      <h2 class="c-homeHead fadeInUpScroll"><span>関連リンク</span>LINK</h2>
+      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">関連リンク</span>LINK</h2>
       <div class="p-homeLink__list fadeInUpScroll">
         <a href="https://github.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_github.webp" alt="GitHub" loading="lazy"></a>
         <a href="https://qiita.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_qiita.webp" alt="Qiita" loading="lazy"></a>
