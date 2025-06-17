@@ -1,28 +1,19 @@
-.post-layout{
-  &__wrap{
-    @include temp-wrap;
-    padding: vw(1920px,40px) 0 vw(1920px,100px);
-  }
-  &__flex{
-    display: flex;
-    justify-content: space-between;
-  }
-}
+@use "foundation" as *;
 
-.archive-post{
+.p-postArchive{
   &__list{
     width: 100%;
-    max-width: vw(1920px,750px);
+    max-width: 750rem;
     display: grid;
-    gap: vw(1920px,16px) vw(1920px,32px);
+    gap: 16rem 32rem;
     grid-template-columns: repeat(2,1fr);
     a{
       display: block;
       &:hover{
-        .archive-post{
+        .p-postArchive{
           &__thumb{
             &::before{
-              border-width: vw(1920px,5px);
+              border-width: 5rem;
               opacity: 1;
               scale: 1;
             }
@@ -50,27 +41,25 @@
       scale: 0.85;
     }
     img{
-      @include temp-img;
       height: 100%;
     }
   }
   &__time{
-    margin-top: vw(1920px,8px);
+    margin-top: 8rem;
     display: block;
-    font-size: vw(1920px,14px);
+    font-size: 14rem;
   }
   &__title{
-    margin-top: vw(1920px,2px);
-    font-size: vw(1920px,18px);
+    margin-top: 2rem;
+    font-size: 18rem;
     font-weight: 700;
   }
 }
 
-.single-post{
-  margin-top: vw(1920px,80px);
-  &__wrap{
-    @include temp-wrap;
-    padding: vw(1920px,40px) 0 vw(1920px,100px);
+.p-postSingle{
+  margin-top: 80rem;
+  &__inner{
+    padding: 40rem 0 100rem;
   }
   &__flex{
     display: flex;
@@ -78,32 +67,32 @@
   }
   &__main{
     width: 100%;
-    max-width: vw(1920px,750px);
-    padding: vw(1920px,48px) vw(1920px,32px);
+    max-width: 750rem;
+    padding: 48rem 32rem;
     background: #FFF5;
   }
   &__meta{
     align-items: center;
-    column-gap: vw(1920px,24px);
+    column-gap: 24rem;
     display: flex;
   }
   &__date{
     opacity: .8;
   }
   &__cat{
-    padding: vw(1920px,8px) vw(1920px,12px);
+    padding: 8rem 12rem;
     background: $darkblue;
     color: #FFF;
-    font-size: vw(1920px,14px);
+    font-size: 14rem;
   }
   &__title{
-    margin: vw(1920px,24px) 0 vw(1920px,48px);
-    font-size: vw(1920px,32px);
+    margin: 24rem 0 48rem;
+    font-size: 32rem;
     font-weight: 700;
   }
   &__content{
     p{
-      margin-top: vw(1920px,20px);
+      margin-top: 20rem;
     }
   }
 }

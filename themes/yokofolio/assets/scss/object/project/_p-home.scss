@@ -1,9 +1,10 @@
-.mv{
+@use "foundation" as *;
+
+.p-homeMv{
   height: 100vh;
   position: relative;
   overflow: hidden;
-  &__wrap{
-    @include temp-wrap;
+  &__inner{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -12,18 +13,18 @@
   h1{
     display: flex;
     font-family: "Gasoek One", sans-serif;
-    font-size: vw(1920px,92px);
+    font-size: 92rem;
     line-height: 1;
     justify-content: center;
     overflow: hidden;
     @include mq(sm){
-      font-size: vw(390px,40px);
+      font-size: 40rem;
     }
     span{
       display: block;
       transform: translateY(2em);
       &.r-margin{
-        margin-right: vw(1920px,16px);
+        margin-right: 16rem;
       }
       &.red{
         color: $red;
@@ -40,13 +41,13 @@
     }
   }
   &__mark{
-    margin-top: vw(1920px,100px);
-    column-gap: vw(1920px,12px);
+    margin-top: 100rem;
+    column-gap: 12rem;
     display: flex;
     justify-content: center;
     opacity: 0;
     div{
-      width: vw(1920px,36px);
+      width: 36rem;
       animation: hyoko 1.2s infinite ease-in-out;
       animation-fill-mode: backwards;
       @keyframes hyoko {
@@ -78,14 +79,13 @@
     }
   }
   &__text{
-    margin-top: vw(1920px,48px);
+    margin-top: 48rem;
     position: relative;
-    font-size: vw(1920px,20px);
+    font-size: 20rem;
     opacity: 0;
     text-align: center;
     @include mq(sm){
-      margin-top: vw(390px,24px);
-      font-size: vw(390px,16px);
+      margin-top: 24rem;
     }
   }
   &__anime{
@@ -117,30 +117,27 @@
     }
   }
 }
-.news{
-  margin-top: vw(1920px,120px);
+
+.p-homeNews{
+  margin-top: 120rem;
   @include mq(sm){
-    margin-top: vw(390px,80px);
+    margin-top: 80rem;
   }
-  &__wrap{
-    @include temp-wrap;
-    max-width: vw(1920px,800px);
-  }
-  &__head{
-    @include home-head;
+  &__inner{
+    max-width: 800rem;
   }
   &__list{
-    margin-top: vw(1920px,48px);
+    margin-top: 48rem;
     display: flex;
     flex-direction: column;
-    row-gap: vw(1920px,16px);
+    row-gap: 16rem;
     li{
       position: relative;
       &::before{
         width: 100%;
-        height: vw(1920px,1px);
+        height: 1rem;
         position: absolute;
-        bottom: vw(1920px,-8px);
+        bottom: -8rem;
         left: 0;
         background: $darkblue;
         content: "";
@@ -148,91 +145,87 @@
     }
     a{
       width: 100%;
-      padding: vw(1920px, 24px) 0;
+      padding: 24rem 0;
       display: flex;
       &:hover{
-        .news__title{
+        .p-homeNews__title{
           text-decoration: underline;
         }
       }
     }
   }
   &__date{
-    width: vw(1920px,100px);
+    width: 100rem;
   }
   &__none{
-    margin-top: vw(1920px,48px);
+    margin-top: 48rem;
     text-align: center;
   }
 }
-.about{
-  margin-top: vw(1920px,240px);
+
+.p-homeAbout{
+  margin-top: 240rem;
   @include mq(sm){
-    margin-top: vw(390px,100px);
+    margin-top: 100rem;
   }
   &__bg{
     @include gradation(to right);
   }
-  &__wrap{
-    @include temp-wrap;
-    padding: vw(1920px,80px) 0 vw(1920px,120px);
+  &__inner{
+    padding: 80rem 0 120rem;
     @include mq(sm){
-      padding: vw(390px,64px) 0 vw(390px,80px);
+      padding: 64rem 0 80rem;
     }
   }
   &__head{
-    @include home-head;
     color: $white;
   }
   &__text{
-    margin-top: vw(1920px,32px);
+    margin-top: 32rem;
     color: $white;
     line-height: 1.7;
     text-align: center;
     @include mq(sm){
-      margin-top: vw(390px,24px);
-      font-size: vw(390px,14px);
+      margin-top: 24rem;
+      font-size: 14rem;
     }
   }
 }
-.skill{
-  margin-top: vw(1920px,128px);
+
+.p-homeSkill{
+  margin-top: 128rem;
   @include mq(sm){
-    margin-top: vw(390px,80px);
+    margin-top: 80rem;
   }
-  &__wrap{
-    @include temp-wrap;
-    max-width: vw(1920px,960px);
-  }
-  &__head{
-    @include home-head;
+  &__inner{
+    max-width: 960rem;
   }
   &__explain{
-    margin-top: vw(1920px,24px);
+    margin-top: 24rem;
     line-height: 1.7;
     text-align: center;
   }
   &__area{
-    margin-top: vw(1920px,100px);
+    margin-top: 100rem;
     position: relative;
     display: flex;
     &:nth-of-type(odd){
       justify-content: flex-end;
-      .skill__img{
-        left: vw(1920px,-100px);
+      .p-homeSkill__img{
+        left: -100rem;
       }
     }
     &:nth-of-type(even){
-      .skill__img{
-        right: vw(1920px,-100px);
+      .p-homeSkill__img{
+        right: -100rem;
       }
     }
   }
   &__box{
     width: 100%;
-    max-width: vw(1920px,720px);
-    margin-top: vw(1920px,120px);
-    padding: vw(1920px,48px) vw(1920px,32px) vw(1920px,64px);
+    max-width: 720rem;
+    margin-top: 120rem;
+    padding: 48rem 32rem 64rem;
     position: relative;
     backdrop-filter: blur(5px);
     background: #FFFA;
@@ -243,23 +236,23 @@
     margin: 0 auto;
     position: relative;
     font-family: "Oswald", sans-serif;
-    font-size: vw(1920px,28px);
+    font-size: 28rem;
     font-weight: 700;
     text-align: center;
     @include mq(sm){
-      font-size: vw(390px,20px);
+      font-size: 20rem;
     }
     &::before,&::after{
-      width: vw(1920px,24px);
-      height: vw(1920px,2px);
+      width: 24rem;
+      height: 2rem;
       position: absolute;
       top: 50%;
       background: $black;
       content: "";
       transform: translateY(-50%);
       @include mq(sm){
-        width: vw(390px,16px);
-        height: vw(390px,2px);
+        width: 16rem;
+        height: 2rem;
       }
     }
     &::before{
@@ -270,61 +263,59 @@
     }
   }
   &__text{
-    margin-top: vw(1920px,10px);
+    margin-top: 10rem;
     text-align: center;
   }
   &__list{
-    margin-top: vw(1920px,32px);
+    margin-top: 32rem;
     display: flex;
     flex-wrap: wrap;
-    gap: vw(1920px,24px) vw(1920px,16px);
+    gap: 24rem 16rem;
     @include mq(sm){
-      margin-top: vw(390px,24px);
-      row-gap: vw(390px,16px);
+      margin-top: 24rem;
+      row-gap: 16rem;
     }
   }
   &__item{
     width: max-content;
-    padding: vw(1920px,8px) vw(1920px,24px);
+    padding: 8rem 24rem;
     background: $darkblue;
     color: $white;
-    font-size: vw(1920px,18px);
+    font-size: 18rem;
     font-weight: 700;
   }
   &__img{
-    width: vw(1920px,560px);
+    width: 560rem;
     position: absolute;
     top: 0;
     aspect-ratio: 4/3;
     z-index: 1;
     img{
-      @include temp-img;
       height: 100%;
     }
   }
 }
-.work{
-  margin-top: vw(1920px,240px);
+
+.p-homeWork{
+  margin-top: 240rem;
   overflow: hidden;
   &__bg{
     @include gradation(to left);
   }
-  &__wrap{
-    @include temp-wrap;
-    padding: vw(1920px,100px) 0;
+  &__inner{
+    padding: 100rem 0;
   }
   &__head{
-    @include home-head;
     color: $white;
   }
   &__list{
-    margin-top: vw(1920px,64px);
+    margin-top: 64rem;
     .splide{
       &__track{
         overflow: visible;
       }
       &__pagination{
-        margin-top: vw(1920px,16px);
+        margin-top: 16rem;
         position: static;
         display: flex;
         button{
@@ -336,10 +327,10 @@
     }
   }
   &__item{
-    margin-right: vw(1920px,24px);
+    margin-right: 24rem;
     a{
-      width: vw(1920px,420px);
-      padding: vw(1920px,16px);
+      width: 420rem;
+      padding: 16rem;
       position: relative;
       background: #FFF;
       display: block;
@@ -356,7 +347,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        border: vw(1920px,6px) solid $yellow;
+        border: 6rem solid $yellow;
         content: "";
         opacity: 0;
         transform: translate(-50%,-50%);
@@ -367,65 +358,57 @@
   &__thumb{
     aspect-ratio: 16/9;
     img{
-      @include temp-img;
       height: 100%;
     }
   }
   &__title{
-    margin: vw(1920px,12px) 0 vw(1920px,20px);
+    margin: 12rem 0 20rem;
     color: $darkblue;
-    font-size: vw(1920px,18px);
+    font-size: 18rem;
     font-weight: 700;
     text-align: center;
   }
   &__content{
-    margin-top: vw(1920px,12px);
+    margin-top: 12rem;
     align-items: center;
-    column-gap: vw(1920px,16px);
+    column-gap: 16rem;
     display: flex;
   }
   &__name{
-    width: vw(1920px,90px);
-    padding: vw(1920px,4px) vw(1920px,8px);
+    width: 90rem;
+    padding: 4rem 8rem;
     background: $darkblue;
     color: #FFF;
-    font-size: vw(1920px,14px);
+    font-size: 14rem;
     font-weight: 700;
     text-align: center;
   }
   &__text{
-    width: calc(100% - vw(1920px,106px));
+    width: calc(100% - 106rem);
   }
   &__link{
-    @include temp-btn;
-    margin: vw(1920px,64px) auto 0;
+    margin: 64rem auto 0;
   }
 }
-.link{
-  margin-top: vw(1920px,240px);
-  &__wrap{
-    @include temp-wrap;
-  }
-  &__head{
-    @include home-head;
-  }
+
+.p-homeLink{
+  margin-top: 240rem;
   &__list{
-    margin-top: vw(1920px,64px);
+    margin-top: 64rem;
     column-gap: 3.5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: vw(1920px,32px);
+    row-gap: 32rem;
     a{
       width: auto;
-      height: vw(1920px,100px);
+      height: 100rem;
       display: block;
       transition: transform .4s;
       &:hover{
         opacity: .7;
       }
       img{
-        @include temp-img;
         height: 100%;
       }
     }

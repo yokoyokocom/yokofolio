@@ -1,100 +1,94 @@
-.works-archive{
-  &__wrap{
-    @include temp-wrap;
-  }
-  &__list{
-    margin-top: vw(1920px,80px);
+@use "foundation" as *;
 
+.p-worksArchive{
+  &__list{
+    margin-top: 80rem;
     display: grid;
-    gap: vw(1920px,24px);
+    gap: 24rem;
     grid-template-columns: repeat(3,1fr);
   }
   &__item{
-    padding: vw(1920px,16px) vw(1920px,16px) vw(1920px,24px);
+    padding: 16rem 16rem 24rem;
     background: #FFF;
   }
   &__thumb{
     width: 100%;
     aspect-ratio: 16/9;
     img{
-      @include temp-img;
       height: 100%;
     }
   }
   &__title{
-    margin-top: vw(1920px,10px);
+    margin-top: 10rem;
     color: $darkblue;
     font-weight: 700;
     text-align: center
   }
   &__content{
-    margin-top: vw(1920px,12px);
+    margin-top: 12rem;
     align-items: center;
     display: flex;
-    font-size: vw(1920px,12px);
+    font-size: 12rem;
     justify-content: space-between;
   }
   &__name{
-    width: vw(1920px,74px);
-    padding: vw(1920px,4px) vw(1920px,8px);
+    width: 74rem;
+    padding: 4rem 8rem;
     background: $darkblue;
     color: #FFF;
     text-align: center;
   }
   &__text{
-    width: calc(100% - vw(1920px,82px));
+    width: calc(100% - 82rem);
   }
   &__btn{
-    @include temp-btn;
-    width: vw(1920px,180px);
-    margin: vw(1920px, 32px) auto 0;
-    padding: vw(1920px,14px);
-    font-size: vw(1920px,14px);
+    width: 180rem;
+    margin: 32rem auto 0;
+    padding: 14rem;
+    font-size: 14rem;
   }
 }
 
-.works-post{
-  &__wrap{
-    @include temp-wrap;
-    max-width: vw(1920px,800px);
+.p-worksSingle{
+  &__inner{
+    max-width: 800rem;
   }
   &__thumb{
-    margin-top: vw(1920px,40px);
+    margin-top: 40rem;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     pointer-events: none;
     img{
-      @include temp-img;
       height: 100%;
     }
   }
   &__info{
     width: 100%;
-    max-width: vw(1920px,640px);
-    margin: vw(1920px,64px) auto 0;
+    max-width: 640rem;
+    margin: 64rem auto 0;
     li{
-      padding: vw(1920px,32px) vw(1920px,16px);
+      padding: 32rem 16rem;
       position: relative;
       align-items: flex-start;
-      border-top: vw(1920px,1px) solid $darkblue;
-      column-gap: vw(1920px,48px);
+      border-top: 1rem solid $darkblue;
+      column-gap: 48rem;
       display: flex;
       &:last-of-type{
-        border-bottom: vw(1920px,1px) solid $darkblue;
+        border-bottom: 1rem solid $darkblue;
       }
     }
   }
   &__title{
-    width: vw(1920px,110px);
-    padding: vw(1920px,4px) vw(1920px,8px);
+    width: 110rem;
+    padding: 4rem 8rem;
     position: relative;
     background: $darkblue;
     color: #FFF;
-    font-size: vw(1920px,14px);
+    font-size: 14rem;
     font-weight: 700;
     text-align: center;
     &::before{
-      width: vw(1920px,1px);
+      width: 1rem;
       height: 100%;
       position: absolute;
       top: 0;
@@ -104,8 +98,8 @@
     }
   }
   &__content{
-    width: calc(100% - vw(1920px,158px));
-    padding: vw(1920px,2px) 0;
+    width: calc(100% - 158rem);
+    padding: 2rem 0;
     a{
       color: #00F;
       text-decoration: underline;
@@ -115,8 +109,8 @@
     }
   }
   &__other{
-    margin-top: vw(1920px,100px);
-    column-gap: vw(1920px,24px);
+    margin-top: 100rem;
+    column-gap: 24rem;
     display: flex;
     justify-content: center;
     a{
