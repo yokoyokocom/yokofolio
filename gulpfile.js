@@ -8,17 +8,18 @@ const notify = require("gulp-notify"); //エラーや完了の通知を表示
 
 function compilseSass(){
   return gulp
-    .src("./themes/cross-river2025/assets/scss/style.scss")
+    .src("./themes/yokofolio/assets/scss/style.scss")
     .pipe(sassGlob())
     .pipe(sass().on("error",sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(cleanCss())
-    .pipe(gulp.dest("./themes/cross-river2025/assets/css"))
+    .pipe(gulp.dest("./themes/yokofolio/assets/css"))
     .pipe(notify({message: "コンパイル完了"}));
 }
 
 function watchFile(){
-  gulp.watch("./themes/cross-river2025/assets/scss/**/*.scss", compilseSass);
+  gulp.watch("./themes/yokofolio/assets/scss/**/*.scss", compilseSass);
 }
 
 exports.default = watchFile;
+exports.compilseSass = compilseSass;

@@ -21,13 +21,13 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
-    <div class="header__bg">
-      <div class="header__wrap">
-        <div class="header__logo">
+  <header class="p-header">
+    <div class="p-header__bg">
+      <div class="p-header__inner l-inner">
+        <div class="p-header__logo">
           <a href="<?php echo esc_url(home_url('/')); ?>">Yoko PortFolio</a>
         </div>
-        <nav class="header__nav">
+        <nav class="p-header__nav">
           <ul>
             <li><a href="<?php echo esc_url(home_url('/news/')); ?>">お知らせ</a></li>
             <li><a href="<?php echo esc_url(home_url('/works/')); ?>">制作実績</a></li>
@@ -39,9 +39,9 @@
   </header>
 
   <?php if(!is_front_page() && !is_singular('post')): ?>
-    <div class="page-title">
-      <div class="page-title__bg">
-        <div class="page-title__wrap">
+    <div class="c-pageTitle">
+      <div class="c-pageTitle__bg">
+        <div class="c-pageTitle__inner">
           <?php
           $postType = get_post_type();
           if(is_404()){
@@ -59,7 +59,7 @@
             $pageTitle = get_the_title();
           }
           ?>
-          <h1 class="page-title__head fadeInScroll"><?php echo $pageTitle; ?></h1>
+          <h1 class="c-pageTitle__head fadeInScroll"><?php echo $pageTitle; ?></h1>
         </div>
       </div>
     </div>

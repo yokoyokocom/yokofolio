@@ -1,7 +1,7 @@
-const mvAnime = document.querySelector(".mv__anime");
+const mvAnime = document.querySelector(".p-homeMv__anime");
 if(mvAnime){
   const tl = gsap.timeline();
-  tl.to(".mv__anime .item",{
+  tl.to(".p-homeMv__anime .item",{
     duration: .5,
     delay: .75,
     opacity: 0,
@@ -20,11 +20,11 @@ if(mvAnime){
       each: .1,
     }
   },"-=0.5")
-  .to(".mv__text",{
+  .to(".p-homeMv__text",{
     duration: 1.5,
     opacity: 1,
   })
-  .to(".mv__mark",{
+  .to(".p-homeMv__mark",{
     duration: 1.5,
     opacity: 1,
   },"<");
@@ -32,4 +32,17 @@ if(mvAnime){
 
 const rellax = new Rellax('.js-rellax');
 
-
+const workList = document.querySelector('.p-homeWork__list');
+if(workList){
+  const worksSlide = new Splide(workList,{
+    arrows: false,
+    autoplay: true,
+    fixedWidth: true,
+    focus: 'center',
+    interval: 2000,
+    speed: 1500,
+    type: 'loop',
+    updateOnMove: true,
+  });
+  worksSlide.mount();
+}
