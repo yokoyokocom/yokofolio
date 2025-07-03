@@ -9,11 +9,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const container = document.querySelector('.c-siteBg');
 container.appendChild(renderer.domElement);
 
-// Ambient Light（全体の柔らかい光）
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-// メインのDirectional Light（太陽光イメージ）
 const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight1.position.set(5, 10, 7);
 scene.add(directionalLight1);
@@ -59,10 +57,10 @@ cross.add(box2);
 cross.position.set(5.5, -1.75, 0);
 scene.add(cross);
 
-sphere.position.set(-5.5, 1.75, 0);
-cone.position.set(-3, -2, 0);
-cube.position.set(3, 2.25, 0);
-cross.position.set(5.5, -1.75, 0);
+sphere.position.set(-6.5, 1.85, 0);
+cone.position.set(-5.6, -2.6, 0);
+cube.position.set(5.2, 2.4, 0);
+cross.position.set(6.2, -2.1, 0);
 
 // 初期のY座標を保存
 const baseY = {
@@ -72,7 +70,133 @@ const baseY = {
   cross: cross.position.y,
 };
 
+const imgRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+imgRenderer.setPixelRatio(window.devicePixelRatio);
+imgRenderer.setSize(window.innerWidth, window.innerHeight);
+
+const fov = 60; // 視野角
+const fovRad = (fov / 2) * (Math.PI / 180);
+const dist = window.innerHeight / 2 / Math.tan(fovRad);
+const imgCamera = new THREE.PerspectiveCamera(
+  fov,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+imgCamera.position.z = dist;
+
+const imgScene = new THREE.Scene();
+
+const imgLoader = new THREE.TextureLoader();
+
+class ImagePlane {
+  constructor(mesh, img) {
+    this.refImage = img;
+    this.mesh = mesh;
+  }
+
+  setParams() {
+    const rect = this.refImage.getBoundingClientRect();
+
+    this.mesh.scale.x = rect.width;
+    this.mesh.scale.y = rect.height;
+
+    const x = rect.left - window.innerWidth / 2 + rect.width / 2;
+    const y = -rect.top + window.innerHeight / 2 - rect.height / 2;
+    this.mesh.position.set(x, y, this.mesh.position.z);
+  }
+
+  update(offset) {
+    this.setParams();
+    this.mesh.material.uniforms.uTime.value = offset;
+  }
+}
+
+const imgVertexShador = `
+varying vec2 vUv;
+uniform float uTime;
+
+const float PI = 3.1415926535897932384626433832795;
+
+void main(){
+  vUv = uv;
+  vec3 pos = position;
+
+  float amp = 0.01;
+  float freq = 0.01 * uTime;
+
+  float tension = -0.001 * uTime;
+
+  pos.x = pos.x + sin(pos.y * PI * freq) * amp;
+  pos.y = pos.y + (cos(pos.x * PI) * tension);
+
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+}
+`;
+
+const imgFragmentShador = `
+varying vec2 vUv;
+uniform sampler2D uTexture;
+uniform float uImageAspect;
+uniform float uPlaneAspect;
+uniform float uTime;
+
+void main(){
+  vec2 ratio = vec2(
+    min(uPlaneAspect / uImageAspect, 1.0),
+    min((1.0 / uPlaneAspect) / (1.0 / uImageAspect), 1.0)
+  );
+
+  vec2 fixedUv = vec2(
+    (vUv.x - 0.5) * ratio.x + 0.5,
+    (vUv.y - 0.5) * ratio.y + 0.5
+  );
+
+  vec2 offset = vec2(0.0, uTime * 0.0005);
+  float r = texture2D(uTexture, fixedUv + offset).r;
+  float g = texture2D(uTexture, fixedUv + offset * 0.5).g;
+  float b = texture2D(uTexture, fixedUv).b;
+  vec3 texture = vec3(r, g, b);
+
+  gl_FragColor = vec4(texture, 1.0);
+}
+`;
+
+const createMesh = (img) => {
+  const texture = imgLoader.load(img.src);
+
+  const uniforms = {
+    uTexture: { value: texture },
+    uImageAspect: { value: img.naturalWidth / img.naturalHeight },
+    uPlaneAspect: { value: img.clientWidth / img.clientHeight },
+    uTime: { value: 0 },
+  };
+  const geo = new THREE.PlaneGeometry(1, 1, 100, 100); // 後から画像のサイズにscaleするので1にしておく
+  const mat = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader: imgVertexShador,
+    fragmentShader: imgFragmentShador,
+  });
+
+  const mesh = new THREE.Mesh(geo, mat);
+
+  return mesh;
+};
+
+const imagePlaneArray = [];
+
 let time = 0;
+
+const imageArray = [...document.querySelectorAll('.p-homeSkill__img img')];
+for (const img of imageArray) {
+  const mesh = createMesh(img);
+  imgScene.add(mesh);
+
+  const imagePlane = new ImagePlane(mesh, img);
+  imagePlane.setParams();
+
+  imagePlaneArray.push(imagePlane);
+}
 
 function animate() {
   requestAnimationFrame(animate);
@@ -96,6 +220,13 @@ function animate() {
   cone.rotation.x += 0.003;
 
   renderer.render(scene, camera);
+
+  updateScroll();
+  for (const plane of imagePlaneArray) {
+    plane.update(scrollOffset);
+  }
+
+  renderer.render(imgScene, imgCamera);
 }
 
 animate();
@@ -106,3 +237,19 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+// スクロール追従
+let targetScrollY = 0;
+let currentScrollY = 0;
+let scrollOffset = 0;
+
+const lerp = (start, end, multiplier) => {
+  return (1 - multiplier) * start + multiplier * end;
+};
+
+const updateScroll = () => {
+  targetScrollY = document.documentElement.scrollTop;
+  currentScrollY = lerp(currentScrollY, targetScrollY, 0.1);
+
+  scrollOffset = targetScrollY - currentScrollY;
+};
