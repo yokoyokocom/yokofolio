@@ -36,7 +36,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: SSH Debug
-      run: ssh -vvv -i key -p $SSH_PORT $SSH_USER@$SSH_HOST
+      run: ssh -vvv -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST
       env:
         SSH_USER: ${{ secrets.SSH_USER }}
         SSH_HOST: ${{ secrets.SSH_HOST }}
