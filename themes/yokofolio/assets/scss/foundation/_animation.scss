@@ -1,0 +1,43 @@
+@use "foundation" as *;
+
+@mixin animeBase{
+  opacity: 0;
+  transition-delay: .2s;
+  pointer-events: none;
+  &.is_active{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.fadeInScroll{
+  transition: opacity .5s $cubic-out;
+  @include animeBase;
+  &.is_active{
+    opacity: 1;
+  }
+}
+.fadeInUpScroll{
+  transform: translateY(50px);
+  transition: opacity .5s $cubic-out, transform .5s $cubic-out;
+  @include animeBase;
+  &.is_active{
+    transform: translateY(0);
+  }
+}
+.fadeInLeftScroll{
+  transform: translateX(-50px);
+  transition: opacity .5s $cubic-out, transform .5s $cubic-out;
+  @include animeBase;
+  &.is_active{
+    transform: translateX(0);
+  }
+}
+.fadeInRightScroll{
+  transform: translateX(50px);
+  transition: opacity .5s $cubic-out, transform .5s $cubic-out;
+  @include animeBase;
+  &.is_active{
+    transform: translateX(0);
+  }
+}

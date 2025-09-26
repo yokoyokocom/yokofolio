@@ -10,6 +10,8 @@ $gradStart: #414083;
 $gradCenter: #100f4d;
 $gradEnd: #240752;
 
+$cubic-out: cubic-bezier(.16,.62,.45,.97);
+
 @mixin gradation($direction){
   background: linear-gradient($direction, $gradStart 0%, $gradCenter 55%, $gradEnd 100%);
 }

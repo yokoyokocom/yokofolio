@@ -11,11 +11,11 @@ Template Name: お問い合わせ
   <div class="p-contact__bg">
     <div class="p-contact__inner l-inner">
       <div class="p-contact__box">
-        <p class="p-contact__none">今、メールサーバー無い</p>
+        <div class="p-contact__none">メールサーバーが無いため、ご用の方は<br><a href="mailto:yottya1226@gmail.com">yottya1226@gmail.com</a><br>までご連絡ください。</div>
         <form class="p-form" action="<?php echo esc_url(home_url('/contact/confirm/')); ?>">
           <div class="p-form__content">
             <p class="p-form__title">お名前<span class="p-form__require"></span></p>
-            <input type="text" name="contactName" placeholder="たろう">
+            <input type="text" name="contactName" placeholder="ぽーと ふぉり男">
           </div>
           <div class="p-form__content">
             <p class="p-form__title">メールアドレス<span class="p-form__require"></span></p>
@@ -23,7 +23,7 @@ Template Name: お問い合わせ
           </div>
           <div class="p-form__content">
             <p class="p-form__title">お問い合わせ内容<span class="p-form__require"></span></p>
-            <textarea name="contactContent" placeholder="メールサーバーください" rows="4"></textarea>
+            <textarea name="contactContent" rows="4"></textarea>
           </div>
           <p class="p-form__error"></p>
           <div class="p-form__btn">

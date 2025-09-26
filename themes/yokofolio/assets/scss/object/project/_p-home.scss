@@ -288,9 +288,23 @@
     position: absolute;
     top: 0;
     aspect-ratio: 4/3;
+    clip-path: inset(10%);
+    filter: grayscale(100%);
+    transition: clip-path 1s $cubic-out, filter 1.75s $cubic-out;
+    transition-delay: .2s;
     z-index: 1;
+    &.is_active{
+      clip-path: inset(0);
+      filter: grayscale(0);
+      img{
+        scale: 1;
+      }
+    }
     img{
       height: 100%;
+      scale: 1.25;
+      transition: scale 1s $cubic-out;
+      transition-delay: .2s;
     }
   }
 }

@@ -1,3 +1,30 @@
+//アニメーションの発火設定
+function scrollAnimation(className, offset){
+  const scrollElements = document.querySelectorAll('.' + className);
+  scrollElements.forEach(function(scrollElement){
+    const elemPos = scrollElement.getBoundingClientRect().top + window.scrollY;
+    const scroll = window.scrollY;
+    const windowHeight = window.innerHeight;
+    if(scroll >= elemPos - windowHeight + offset){
+      scrollElement.classList.add('is_active');
+    }
+  });
+}
+window.addEventListener('scroll', function(){
+  scrollAnimation('anime-set', 100);
+  scrollAnimation('fadeInScroll', 100);
+  scrollAnimation('fadeInLeftScroll', 100);
+  scrollAnimation('fadeInRightScroll', 100);
+  scrollAnimation('fadeInUpScroll', 100);
+});
+window.addEventListener('DOMContentLoaded',function(){
+  scrollAnimation('anime-set', 100);
+  scrollAnimation('fadeInScroll', 100);
+  scrollAnimation('fadeInLeftScroll', 100);
+  scrollAnimation('fadeInRightScroll', 100);
+  scrollAnimation('fadeInUpScroll', 100);
+});
+
 const mvAnime = document.querySelector(".p-homeMv__anime");
 if(mvAnime){
   const tl = gsap.timeline();
@@ -32,14 +59,15 @@ if(mvAnime){
 
 const workList = document.querySelector('.p-homeWork__list');
 if(workList){
+  const workListItems = workList.querySelector('.splide__list').children.length;
   const worksSlide = new Splide(workList,{
     arrows: false,
-    autoplay: true,
+    autoplay: workListItems > 2 ? true : false,
     fixedWidth: true,
     focus: 'center',
     interval: 2000,
     speed: 1500,
-    type: 'loop',
+    type: workListItems > 2 ? 'loop' : 'slide',
     updateOnMove: true,
   });
   worksSlide.mount();

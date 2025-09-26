@@ -1,11 +1,11 @@
 @use "foundation" as *;
 
 .p-footer{
+  margin-top: 240rem;
   &__bg{
     background: $darkblue;
   }
   &__inner{
-    margin-top: 240rem;
     padding: 24rem;
     align-items: center;
   }

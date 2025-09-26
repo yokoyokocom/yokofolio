@@ -71,7 +71,7 @@
   <section class="p-homeAbout">
     <div class="p-homeAbout__bg fadeInUpScroll">
       <div class="p-homeAbout__inner l-inner">
-        <h2 class="p-homeAbout__head c-homeHead fadeInUpScroll"><span class="jp">自己紹介</span><span class="green">A</span>BOUT</h2>
+        <h2 class="p-homeAbout__head c-homeHead fadeInUpScroll"><span class="jp">じぶんのこと</span><span class="green">A</span>BOUT</h2>
         <p class="p-homeAbout__text fadeInUpScroll">
           はじめまして、このサイトにお越しいただきありがとうございます。<br>
           北海道にて現役フロントエンドエンジニアの「よこ」と申します。</p>
@@ -96,7 +96,7 @@
 
   <section class="p-homeSkill">
     <div class="p-homeSkill__inner l-inner">
-      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">技術力</span><span class="red">S</span>KILL</h2>
+      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">できること</span><span class="red">S</span>KILL</h2>
       <p class="p-homeSkill__explain fadeInUpScroll">各項目ごとに使用可能な技術を一覧にしています。<br>記載しているもの全てが完璧に使いこなせる訳ではありません。</p>
       <section class="p-homeSkill__area">
         <div class="p-homeSkill__box">
@@ -115,7 +115,7 @@
             <li class="p-homeSkill__item fadeInScroll">Liquid</li>
           </ul>
         </div>
-        <div class="p-homeSkill__img fadeInLeftScroll"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/skill_bg01.webp" alt="HTMLソースコードの画像" width="560" height="420" loading="lazy"></div>
+        <div class="p-homeSkill__img anime-set"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/skill_bg01.webp" alt="HTMLソースコードの画像" width="560" height="420" loading="lazy"></div>
       </section>
       <section class="p-homeSkill__area">
         <div class="p-homeSkill__box">
@@ -189,7 +189,7 @@
     <section class="p-homeWork">
       <div class="p-homeWork__bg">
         <div class="p-homeWork__inner l-inner">
-          <h2 class="p-homeWork__head c-homeHead fadeInUpScroll"><span class="jp">制作実績</span><span class="yellow">W</span>ORKS</h2>
+          <h2 class="p-homeWork__head c-homeHead fadeInUpScroll"><span class="jp">つくったもの</span><span class="yellow">W</span>ORKS</h2>
           <div class="p-homeWork__list splide fadeInScroll">
             <div class="splide__track">
               <div class="splide__list">
@@ -227,7 +227,7 @@
 
   <section class="p-homeLink">
     <div class="p-homeLink__inner l-inner">
-      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">関連リンク</span>LINK</h2>
+      <h2 class="c-homeHead fadeInUpScroll"><span class="jp">これやってます</span>LINK</h2>
       <div class="p-homeLink__list fadeInUpScroll">
         <a href="https://github.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_github.webp" alt="GitHub" loading="lazy"></a>
         <a href="https://qiita.com/yokoyokocom" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/link_qiita.webp" alt="Qiita" loading="lazy"></a>
