@@ -1,0 +1,15 @@
+.DS_Store
+
+ai1wm-backups
+languages
+upgrade
+uploads
+plugins
+
+themes/twentytwenty*
+themes/index.php
+themes/yokofolio/assets/css/style.css
+
+node_modules
+
+.env

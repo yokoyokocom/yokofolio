@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass ./themes/yokofolio/assets/scss/style.scss ./themes/yokofolio/assets/css/style.css --style=compressed --watch --no-source-map",
+    "build": "gulp compilseSass"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sass-glob-use-forward": "^0.1.3",
+    "sass": "^1.83.4"
+  }
+}
