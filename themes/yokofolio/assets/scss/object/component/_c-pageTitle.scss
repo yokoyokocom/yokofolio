@@ -1,0 +1,19 @@
+@use "foundation" as *;
+
+.c-pageTitle{
+  &__bg{
+    @include gradation(to right);
+  }
+  &__inner{
+    min-height: 320rem;
+    padding-top: 64rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__head{
+    color: #FFF;
+    font-size: 48rem;
+    font-weight: 700;
+  }
+}

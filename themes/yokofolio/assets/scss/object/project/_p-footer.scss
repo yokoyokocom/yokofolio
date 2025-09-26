@@ -1,0 +1,41 @@
+@use "foundation" as *;
+
+.p-footer{
+  &__bg{
+    background: $darkblue;
+  }
+  &__inner{
+    margin-top: 240rem;
+    padding: 24rem;
+    align-items: center;
+  }
+  &__sns{
+    column-gap: 16rem;
+    display: flex;
+    justify-content: center;
+    a{
+      color: #FFF;
+      font-size: 24rem;
+      &:hover{
+        opacity: .7;
+      }
+      svg{
+        height: 24rem;
+        path{
+          fill: #FFF;
+        }
+      }
+    }
+  }
+  &__copyright{
+    margin-top: 16rem;
+    color: $white;
+    font-size: 14rem;
+    text-align: center;
+    a{
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+}

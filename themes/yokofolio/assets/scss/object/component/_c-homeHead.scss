@@ -1,0 +1,35 @@
+@use "foundation" as *;
+
+.c-homeHead{
+  color: $darkblue;
+  font-family: "Gasoek One", sans-serif;
+  font-size: 48rem;
+  text-align: center;
+  @include mq(sm){
+    font-size: 32rem;
+  }
+  span{
+    &.jp{
+      display: block;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 14rem;
+      font-weight: 700;
+      opacity: .8;
+      @include mq(sm){
+        font-size: 12rem;
+      }
+    }
+    &.red{
+      color: $red;
+    }
+    &.blue{
+      color: $blue;
+    }
+    &.yellow{
+      color: $yellow;
+    }
+    &.green{
+      color: $green;
+    }
+  }
+}

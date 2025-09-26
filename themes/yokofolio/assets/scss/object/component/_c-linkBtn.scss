@@ -1,0 +1,62 @@
+@use "foundation" as *;
+
+.c-linkBtn{
+  width: 100%;
+  max-width: 240rem;
+  padding: 20rem 0;
+  position: relative;
+  background: $darkblue;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  text-align: center;
+  transition: background .4s, color .4s;
+  &::before{
+    width: calc(100% + 12rem);
+    height: calc(100% + 12rem);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    border: 3rem solid $darkblue;
+    translate: -50% -50%;
+  }
+  &::after{
+    position: absolute;
+    top: 50%;
+    right: 20rem;
+    border-style: solid;
+    border-top: 6rem solid transparent;
+    border-bottom: 6rem solid transparent;
+    border-left: 10rem solid $white;
+    border-right: 0;
+    content: "";
+    translate: 0 -50%;
+    transition: border-color .4s, translate .4s;
+  }
+  &:hover{
+    background: transparent;
+    color: $darkblue;
+    &::after{
+      border-left: 10rem solid $darkblue;
+      translate: 10rem -50%;
+    }
+  }
+  &.white-color{
+    background: $white;
+    color: $darkblue;
+    &::before{
+      border-color: $white;
+    }
+    &::after{
+      border-left: 10rem solid $darkblue;
+    }
+    &:hover{
+      background: transparent;
+      color: $white;
+      &::after{
+        border-left: 10rem solid $white;
+      }
+    }
+  }
+}

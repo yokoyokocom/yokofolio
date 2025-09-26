@@ -1,0 +1,22 @@
+.c-bread{
+  &__inner{
+    padding: 4rem 0;
+  }
+  &__list{
+    column-gap: 10rem;
+    display: flex;
+  }
+  &__item{
+    a{
+      text-decoration: underline;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &__arrow{
+    &::before{
+      content: ">";
+    }
+  }
+}

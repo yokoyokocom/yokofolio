@@ -1,0 +1,415 @@
+@use "foundation" as *;
+
+.p-homeMv{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  &__inner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+  h1{
+    display: flex;
+    font-family: "Gasoek One", sans-serif;
+    font-size: 92rem;
+    line-height: 1;
+    justify-content: center;
+    overflow: hidden;
+    @include mq(sm){
+      font-size: 40rem;
+    }
+    span{
+      display: block;
+      transform: translateY(2em);
+      &.r-margin{
+        margin-right: 16rem;
+      }
+      &.red{
+        color: $red;
+      }
+      &.green{
+        color: $green;
+      }
+      &.blue{
+        color: $blue;
+      }
+      &.yellow{
+        color: $yellow;
+      }
+    }
+  }
+  &__mark{
+    margin-top: 100rem;
+    column-gap: 12rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    div{
+      width: 36rem;
+      animation: hyoko 1.2s infinite ease-in-out;
+      animation-fill-mode: backwards;
+      @keyframes hyoko {
+        0%{
+          translate: 0 0;
+        }
+        30%{
+          translate: 0 -10px;
+        }
+        100%{
+          translate: 0 0;
+        }
+      }
+      &.circle{
+        @include circle;
+      }
+      &.triangle{
+        @include triangle;
+        animation-delay: .3s;
+      }
+      &.square{
+        @include square;
+        animation-delay: .6s;
+      }
+      &.cross{
+        @include cross;
+        animation-delay: .9s;
+      }
+    }
+  }
+  &__text{
+    margin-top: 48rem;
+    position: relative;
+    font-size: 20rem;
+    opacity: 0;
+    text-align: center;
+    @include mq(sm){
+      margin-top: 24rem;
+    }
+  }
+  &__anime{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    pointer-events: none;
+    translate: -50% -50%;
+    .item{
+      width: 10%;
+      aspect-ratio: 1/1;
+      opacity: .8;
+      &.circle{
+        @include circle;
+      }
+      &.square{
+        @include square;
+      }
+      &.triangle{
+        @include triangle;
+      }
+      &.cross{
+        @include cross;
+      }
+    }
+  }
+}
+
+.p-homeNews{
+  margin-top: 120rem;
+  @include mq(sm){
+    margin-top: 80rem;
+  }
+  &__inner{
+    max-width: 800rem;
+  }
+  &__list{
+    margin-top: 48rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16rem;
+    li{
+      position: relative;
+      &::before{
+        width: 100%;
+        height: 1rem;
+        position: absolute;
+        bottom: -8rem;
+        left: 0;
+        background: $darkblue;
+        content: "";
+      }
+    }
+    a{
+      width: 100%;
+      padding: 24rem 0;
+      display: flex;
+      &:hover{
+        .p-homeNews__title{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__date{
+    width: 100rem;
+  }
+  &__none{
+    margin-top: 48rem;
+    text-align: center;
+  }
+}
+
+.p-homeAbout{
+  margin-top: 240rem;
+  @include mq(sm){
+    margin-top: 100rem;
+  }
+  &__bg{
+    @include gradation(to right);
+  }
+  &__inner{
+    padding: 80rem 0 120rem;
+    @include mq(sm){
+      padding: 64rem 0 80rem;
+    }
+  }
+  &__head{
+    color: $white;
+  }
+  &__text{
+    margin-top: 32rem;
+    color: $white;
+    line-height: 1.7;
+    text-align: center;
+    @include mq(sm){
+      margin-top: 24rem;
+      font-size: 14rem;
+    }
+  }
+}
+
+.p-homeSkill{
+  margin-top: 128rem;
+  @include mq(sm){
+    margin-top: 80rem;
+  }
+  &__inner{
+    max-width: 960rem;
+  }
+  &__explain{
+    margin-top: 24rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+  &__area{
+    margin-top: 100rem;
+    position: relative;
+    display: flex;
+    &:nth-of-type(odd){
+      justify-content: flex-end;
+      .p-homeSkill__img{
+        left: -100rem;
+      }
+    }
+    &:nth-of-type(even){
+      .p-homeSkill__img{
+        right: -100rem;
+      }
+    }
+  }
+  &__box{
+    width: 100%;
+    max-width: 720rem;
+    margin-top: 120rem;
+    padding: 48rem 32rem 64rem;
+    position: relative;
+    backdrop-filter: blur(5px);
+    background: #FFFA;
+    z-index: 2;
+  }
+  &__kinds{
+    max-width: max-content;
+    margin: 0 auto;
+    position: relative;
+    font-family: "Gasoek One", sans-serif;
+    font-size: 28rem;
+    text-align: center;
+    @include mq(sm){
+      font-size: 20rem;
+    }
+    &::before,&::after{
+      width: 24rem;
+      height: 2rem;
+      position: absolute;
+      top: 50%;
+      background: $black;
+      content: "";
+      transform: translateY(-50%);
+      @include mq(sm){
+        width: 16rem;
+        height: 2rem;
+      }
+    }
+    &::before{
+      right: 110%;
+    }
+    &::after{
+      left: 110%;
+    }
+  }
+  &__text{
+    margin-top: 10rem;
+    text-align: center;
+  }
+  &__list{
+    margin-top: 32rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24rem 16rem;
+    @include mq(sm){
+      margin-top: 24rem;
+      row-gap: 16rem;
+    }
+  }
+  &__item{
+    width: max-content;
+    padding: 8rem 24rem;
+    background: $darkblue;
+    color: $white;
+    font-size: 18rem;
+    font-weight: 700;
+  }
+  &__img{
+    width: 560rem;
+    position: absolute;
+    top: 0;
+    aspect-ratio: 4/3;
+    z-index: 1;
+    img{
+      height: 100%;
+    }
+  }
+}
+
+.p-homeWork{
+  margin-top: 240rem;
+  overflow: hidden;
+  &__bg{
+    @include gradation(to left);
+  }
+  &__inner{
+    padding: 100rem 0;
+  }
+  &__head{
+    color: $white;
+  }
+  &__list{
+    margin-top: 64rem;
+    .splide{
+      &__track{
+        overflow: visible;
+      }
+      &__pagination{
+        margin-top: 16rem;
+        position: static;
+        display: flex;
+        button{
+          &.is-active{
+            background: $yellow;
+          }
+        }
+      }
+    }
+  }
+  &__item{
+    margin-right: 24rem;
+    a{
+      width: 420rem;
+      padding: 16rem;
+      position: relative;
+      background: #FFF;
+      display: block;
+      &:hover{
+        &::before{
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+        }
+      }
+      &::before{
+        width: 85%;
+        height: 85%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 6rem solid $yellow;
+        content: "";
+        opacity: 0;
+        transform: translate(-50%,-50%);
+        transition: width .4s, height .4s, opacity .4s;
+      }
+    }
+  }
+  &__thumb{
+    aspect-ratio: 16/9;
+    img{
+      height: 100%;
+    }
+  }
+  &__title{
+    margin: 12rem 0 20rem;
+    color: $darkblue;
+    font-size: 18rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__content{
+    margin-top: 12rem;
+    align-items: center;
+    column-gap: 16rem;
+    display: flex;
+  }
+  &__name{
+    width: 90rem;
+    padding: 4rem 8rem;
+    background: $darkblue;
+    color: #FFF;
+    font-size: 14rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__text{
+    width: calc(100% - 106rem);
+  }
+  &__link{
+    margin: 64rem auto 0;
+  }
+}
+
+.p-homeLink{
+  margin-top: 240rem;
+  &__list{
+    margin-top: 64rem;
+    column-gap: 3.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 32rem;
+    a{
+      width: auto;
+      height: 100rem;
+      display: block;
+      transition: transform .4s;
+      &:hover{
+        opacity: .7;
+      }
+      img{
+        height: 100%;
+      }
+    }
+  }
+}

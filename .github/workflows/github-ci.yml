@@ -1,0 +1,46 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: compile SCSS
+      run: |
+        npm run build
+
+    - name: ssh key generate
+      run: echo "$SSH_PRIVATE_KEY" | tr -d '\r' > key && chmod 600 key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to Server
+      run: |
+        rsync -auzrvvv --delete ./themes/ $SSH_USER@$SSH_HOST:$SSH_PATH --exclude=".git/" --exclude=".github/" --exclude="node_modules/" --exclude="*.example" --exclude=".gitignore" --exclude="docker-compose.yaml" --exclude="Dockerfile" --exclude="*.json" --exclude="README.md" -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $SSH_PORT"
+        echo "Deploy Successful"
+      env:
+        SSH_USER: ${{ secrets.SSH_USER }}
+        SSH_HOST: ${{ secrets.SSH_HOST }}
+        SSH_PATH: ${{ secrets.SSH_PATH }}
+        SSH_PORT: ${{ secrets.SSH_PORT }}

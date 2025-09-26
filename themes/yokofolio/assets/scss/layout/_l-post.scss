@@ -1,0 +1,11 @@
+@use "foundation" as *;
+
+.l-post{
+  &__inner{
+    padding: 40rem 0 100rem;
+  }
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,61 @@
+@use "foundation" as *;
+
+.p-contact{
+  margin-top: 80rem;
+  &__inner{
+    max-width: 800rem;
+  }
+  &__box{
+    padding: 32rem 48rem;
+    background: #FFF;
+    border: 2rem solid $black;
+    border-radius: 5rem;
+    @include mq(sm){
+      padding: 24rem 16rem;
+    }
+  }
+  &__none{
+    max-width: max-content;
+    margin: 0 auto 24rem;
+    padding: 16rem;
+    background: #000;
+    font-weight: 700;
+    text-align: center;
+    animation: kirakira 1s infinite;
+    @keyframes kirakira {
+      0%{
+        color: #F00;
+      }
+      10%{
+        color: #F0F;
+      }
+      20%{
+        color: #0FF;
+      }
+      30%{
+        color: #0F0;
+      }
+      40%{
+        color: #FF0;
+      }
+      50%{
+        color: #00F;
+      }
+      60%{
+        color: #0F0;
+      }
+      70%{
+        color: #F0F;
+      }
+      80%{
+        color: #0FF;
+      }
+      90%{
+        color: #FF0;
+      }
+      100%{
+        color: #F00;
+      }
+    }
+  }
+}

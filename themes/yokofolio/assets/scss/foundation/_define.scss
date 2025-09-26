@@ -1,0 +1,53 @@
+$black: #01002e;
+$darkblue: #090766;
+$white: #EEE;
+$red: #8a2020;
+$yellow: #c9bb00;
+$green: #258a25;
+$blue: #2c2c9b;
+
+$gradStart: #414083;
+$gradCenter: #100f4d;
+$gradEnd: #240752;
+
+@mixin gradation($direction){
+  background: linear-gradient($direction, $gradStart 0%, $gradCenter 55%, $gradEnd 100%);
+}
+
+@mixin circle{
+  aspect-ratio: 1;
+  background: $red;
+  border-radius: 50%;
+}
+
+@mixin triangle{
+  aspect-ratio: 1;
+  background: $green;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@mixin square{
+  aspect-ratio: 1;
+  background: $blue;
+}
+
+@mixin cross{
+  position: relative;
+  aspect-ratio: 1;
+  &::before,&::after{
+    width: 115%;
+    height: 25%;
+    position: absolute;
+    inset: 50%;
+    background: $yellow;
+    content: "";
+    display: block;
+    translate: -50% -50%;
+  }
+  &::before{
+    rotate: 45deg;
+  }
+  &::after{
+    rotate: -45deg;
+  }
+}
