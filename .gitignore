@@ -9,6 +9,7 @@ plugins
 themes/twentytwenty*
 themes/index.php
 themes/yokofolio/assets/css/style.css
+themes/yokofolio/assets/js/main.js
 
 node_modules
 
