@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "sass ./themes/yokofolio/assets/scss/style.scss ./themes/yokofolio/assets/css/style.css --style=compressed --watch --no-source-map",
-    "build": "gulp compilseSass"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.0",
     "gulp": "^5.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-notify": "^5.0.0",
